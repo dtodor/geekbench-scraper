@@ -41,7 +41,9 @@ configurations = YAML::load(IO.read(File.dirname(__FILE__) + '/configurations.ym
 
 results = {}
 configurations.each do |key,value|
-  results[key] = Scraper.scrape :search => value['search'], :processor => Regexp.new(value['processor']), :plattform => options[:mode]
+  if value['enabled']
+    results[key] = Scraper.scrape :search => value['search'], :processor => Regexp.new(value['processor']), :plattform => options[:mode]
+  end
 end
 
 Score.delete_all
