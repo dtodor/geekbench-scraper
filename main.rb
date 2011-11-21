@@ -1,9 +1,11 @@
-require 'array_ext'
-require 'scraper'
-require 'db'
-require 'chronic'
-require 'optparse'
+require "rubygems"
+require "bundler/setup"
 
+require "array_ext"
+require "scraper"
+require "db"
+require "chronic"
+require "optparse"
 
 options = {}
  
@@ -35,16 +37,19 @@ end
 # the options. What's left is the list of files to resize.
 optparse.parse!
 
-puts "Parsing Geekbench scores for #{options[:mode]} plattform ..."
+puts "Parsing Geekbench scores for #{options[:mode]} plattform ...\n"
 
 configurations = YAML::load(IO.read(File.dirname(__FILE__) + '/configurations.yml'))
 
 results = {}
 configurations.each do |key,value|
   if value['enabled']
+    puts "Fetching scores for '#{value['name']}' ..."
     results[key] = Scraper.scrape :search => value['search'], :processor => Regexp.new(value['processor']), :plattform => options[:mode]
   end
 end
+
+puts ""
 
 Score.delete_all
 

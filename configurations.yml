@@ -62,7 +62,7 @@ i7_640:
   search: "macbookpro 6,2"
   processor: .+(i7).+(640)
   name: "MacBook Pro 15 Early 2010, Core i7 640 @ 2.80 GHz"
-  enabled: true
+  enabled: false
 
 i5_2415:
   search: "macbookpro 8,1"
@@ -92,4 +92,34 @@ i7_2820:
   search: "macbookpro 8,2"
   processor: .+(i7).+(2820)
   name: "MacBook Pro 15 Early 2011, Core i7-2820QM @ 2.30 GHz"
+  enabled: true
+
+i5_2435:
+  search: "macbookpro 8,1"
+  processor: .+(i5).+(2435)
+  name: "MacBook Pro 13 Late 2011, Core i5-2435M @ 2.40 GHz"
+  enabled: true
+
+i7_2640:
+  search: "macbookpro 8,1"
+  processor: .+(i7).+(2640)
+  name: "MacBook Pro 13 Late 2011, Core i7-2640M @ 2.80 GHz"
+  enabled: true
+
+i7_2675:
+  search: "macbookpro 8,2"
+  processor: .+(i7).+(2675)
+  name: "MacBook Pro 15 Late 2011, Core i7-2675QM @ 2.20 GHz"
+  enabled: true
+
+i7_2760:
+  search: "macbookpro 8,2"
+  processor: .+(i7).+(2760)
+  name: "MacBook Pro 15 Late 2011, Core i7-2760QM @ 2.40 GHz"
+  enabled: true
+
+i7_2860:
+  search: "macbookpro 8,2"
+  processor: .+(i7).+(2860)
+  name: "MacBook Pro 15 Late 2011, Core i7-2860QM @ 2.50 GHz"
   enabled: true
